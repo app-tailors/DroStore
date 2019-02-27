@@ -20,7 +20,7 @@ import {
 class CalendarScreen extends Component {
   static navigationOptions = {
     header: props => {
-      return <MainHeader />;
+      return <MainHeader title="Orders" />;
     }
   };
 
@@ -33,7 +33,8 @@ class CalendarScreen extends Component {
           style={{
             elevation: 10,
             zIndex: 10,
-            paddingBottom: 10
+            paddingBottom: 10,
+            borderRadius: 5
           }}
         >
           <CalendarPicker

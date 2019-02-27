@@ -3,7 +3,8 @@ import { Platform } from "react-native";
 import { Icon } from "expo";
 import {
   createStackNavigator,
-  createBottomTabNavigator
+  createBottomTabNavigator,
+  createDrawerNavigator
 } from "react-navigation";
 
 import TabBarIcon from "../components/TabBarIcon";
@@ -12,6 +13,9 @@ import ArticlesScreen from "../screens/ArticlesScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 import CalendarScreen from "../screens/CalendarScreen";
 import Colors from "../constants/Colors";
+import DrawerNavigation from "../components/DrawerNavigation";
+import CreditScreen from "../screens/CreditScreen";
+import AccountScreen from "../screens/AccountScreen";
 
 const CalendarStack = createStackNavigator(
   {
@@ -35,7 +39,7 @@ const HomeStack = createStackNavigator(
 
 HomeStack.navigationOptions = {
   tabBarIcon: ({ focused, tintColor }) => (
-    <Icon.Feather name="home" size={24} color={tintColor} />
+    <Icon.Feather name="bar-chart-2" size={24} color={tintColor} />
   )
 };
 
@@ -53,24 +57,21 @@ const SettingsStack = createStackNavigator({
   Settings: SettingsScreen
 });
 
-SettingsStack.navigationOptions = {
-  tabBarLabel: "Settings",
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === "ios" ? "ios-options" : "md-options"}
-    />
-  )
-};
+const CreditStack = createStackNavigator({
+  Credit: CreditScreen
+});
+const AccountStack = createStackNavigator({
+  Account: AccountScreen
+});
 
-export default createBottomTabNavigator(
+const tabApp = createBottomTabNavigator(
   {
     CalendarStack,
     HomeStack,
     ArticlesStack
   },
   {
-    initialRouteName: "CalendarStack",
+    initialRouteName: "HomeStack",
     tabBarOptions: {
       showLabel: false,
       inactiveTintColor: Colors.fade,
@@ -80,5 +81,18 @@ export default createBottomTabNavigator(
         borderTopWidth: 0
       }
     }
+  }
+);
+
+export default createDrawerNavigator(
+  {
+    Home: tabApp,
+    Settings: SettingsStack,
+    Credits: CreditStack,
+    Account: AccountStack
+  },
+  {
+    drawerWidth: 320,
+    contentComponent: () => <DrawerNavigation />
   }
 );

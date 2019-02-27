@@ -10,7 +10,8 @@ const theme = {
   colors: {
     ...DefaultTheme.colors,
     background: Colors.background,
-    primary: Colors.primary
+    primary: Colors.primary,
+    text: Colors.text
   },
   roundness: 5,
   fonts: {
@@ -60,6 +61,8 @@ export default class App extends React.Component {
         // to remove this if you are not using it in your app
         regular: require("./assets/fonts/Work_Sans/WorkSans-Regular.ttf"),
         medium: require("./assets/fonts/Work_Sans/WorkSans-Medium.ttf"),
+        bold: require("./assets/fonts/Work_Sans/WorkSans-Bold.ttf"),
+        black: require("./assets/fonts/Work_Sans/WorkSans-Black.ttf"),
         light: require("./assets/fonts/Work_Sans/WorkSans-Light.ttf"),
         thin: require("./assets/fonts/Work_Sans/WorkSans-Thin.ttf")
       })

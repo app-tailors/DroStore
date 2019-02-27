@@ -22,7 +22,7 @@ const chartConfiguration = [50, 30, 40, 95, 85, 91];
 class HomeScreen extends Component {
   static navigationOptions = {
     header: props => {
-      return <MainHeader />;
+      return <MainHeader title="Dashboard" />;
     }
   };
 

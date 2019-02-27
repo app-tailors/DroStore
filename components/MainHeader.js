@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Icon } from "expo";
+import { withNavigation } from "react-navigation";
 import { Appbar, Badge, IconButton, Avatar } from "react-native-paper";
 import Colors from "../constants/Colors";
 
@@ -8,12 +9,13 @@ class MainHeader extends Component {
     return (
       <Appbar.Header style={{ backgroundColor: "white", elevation: 0 }}>
         <Appbar.Action
+          onPress={this.props.navigation.openDrawer}
           color={Colors.primary}
           icon={({ size, color }) => (
             <Icon.Feather name="menu" color={color} size={size} />
           )}
         />
-        <Appbar.Content />
+        <Appbar.Content title={this.props.title} />
         <Appbar.Action
           color={Colors.fade}
           icon={({ size, color }) => (
@@ -38,4 +40,4 @@ class MainHeader extends Component {
   }
 }
 
-export default MainHeader;
+export default withNavigation(MainHeader);
