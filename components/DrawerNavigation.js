@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { ScrollView } from "react-native";
 import { withNavigation } from "react-navigation";
-import { Drawer, Headline } from "react-native-paper";
+import { Drawer, Headline, Text } from "react-native-paper";
 import { Constants, Icon } from "expo";
 import Colors from "../constants/Colors";
 
@@ -10,7 +10,7 @@ class DrawerNavigation extends Component {
     activedLink: "Home",
     links: [
       { key: "Home", icon: "home" },
-      { key: "Account", icon: "user" },
+      // { key: "Account", icon: "user" },
       { key: "Settings", icon: "settings" },
       { key: "Credits", icon: "info" }
     ]
@@ -33,11 +33,12 @@ class DrawerNavigation extends Component {
             paddingVertical: 70,
             textAlign: "center",
             color: Colors.primary,
-            fontFamily: "bold",
+            fontSize: 40,
+            fontFamily: "light",
             backgroundColor: Colors.background
           }}
         >
-          DroStore
+          DroStore<Text style={{ fontSize: 50, color: Colors.red }}>.</Text>
         </Headline>
 
         <ScrollView>

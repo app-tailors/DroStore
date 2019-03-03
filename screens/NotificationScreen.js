@@ -2,10 +2,10 @@ import React from "react";
 import MainHeader from "../components/MainHeader";
 import { Text } from "react-native-paper";
 
-export default class AccountScreen extends React.Component {
+export default class NotificationsScreen extends React.Component {
   static navigationOptions = {
     header: props => {
-      return <MainHeader hasBack title="Account" />;
+      return <MainHeader hasBack title="Notifications" />;
     }
   };
 

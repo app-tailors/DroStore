@@ -16,6 +16,8 @@ import Colors from "../constants/Colors";
 import DrawerNavigation from "../components/DrawerNavigation";
 import CreditScreen from "../screens/CreditScreen";
 import AccountScreen from "../screens/AccountScreen";
+import NotificationsScreen from "../screens/NotificationScreen";
+import AddCategoryScreen from "../screens/AddCategory";
 
 const CalendarStack = createStackNavigator(
   {
@@ -60,9 +62,6 @@ const SettingsStack = createStackNavigator({
 const CreditStack = createStackNavigator({
   Credit: CreditScreen
 });
-const AccountStack = createStackNavigator({
-  Account: AccountScreen
-});
 
 const tabApp = createBottomTabNavigator(
   {
@@ -71,7 +70,7 @@ const tabApp = createBottomTabNavigator(
     ArticlesStack
   },
   {
-    initialRouteName: "HomeStack",
+    initialRouteName: "ArticlesStack",
     tabBarOptions: {
       showLabel: false,
       inactiveTintColor: Colors.fade,
@@ -84,12 +83,28 @@ const tabApp = createBottomTabNavigator(
   }
 );
 
+tabApp.navigationOptions = {
+  header: null,
+  headerBackTitle: null
+};
+
+const stackApp = createStackNavigator(
+  {
+    tabApp,
+    Account: AccountScreen,
+    AddCategory: AddCategoryScreen,
+    Notifications: NotificationsScreen
+  },
+  {
+    headerMode: "screen"
+  }
+);
+
 export default createDrawerNavigator(
   {
-    Home: tabApp,
+    Home: stackApp,
     Settings: SettingsStack,
-    Credits: CreditStack,
-    Account: AccountStack
+    Credits: CreditStack
   },
   {
     drawerWidth: 320,

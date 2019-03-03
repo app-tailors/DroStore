@@ -70,6 +70,8 @@ class ArticlesScreen extends Component {
   render() {
     const { screen, btnStyle } = styles;
     const { openedCell, open, listViewData, firstQuery, active } = this.state;
+    const { navigation } = this.props;
+    const { navigate } = navigation;
 
     return (
       <View style={screen}>
@@ -182,19 +184,19 @@ class ArticlesScreen extends Component {
             icon={open ? "close" : "add"}
             actions={[
               {
-                icon: "layers",
-                label: "Add Article",
-                onPress: () => console.log("Pressed Articles")
+                icon: "today",
+                label: "Create Order",
+                onPress: () => console.log("Pressed Orders")
               },
               {
                 icon: "folder",
                 label: "Add Category",
-                onPress: () => console.log("Pressed Category")
+                onPress: () => navigate("AddCategory")
               },
               {
-                icon: "today",
-                label: "Create Order",
-                onPress: () => console.log("Pressed Orders")
+                icon: "layers",
+                label: "Add Article",
+                onPress: () => console.log("Pressed Category")
               }
             ]}
             onStateChange={data => this.setState({ open: data.open })}

@@ -6115,10 +6115,10 @@ react-native-maps@expo/react-native-maps#v0.22.1-exp.0:
   version "0.22.1"
   resolved "https://codeload.github.com/expo/react-native-maps/tar.gz/e6f98ff7272e5d0a7fe974a41f28593af2d77bb2"
 
-react-native-paper@^2.11.1:
-  version "2.11.1"
-  resolved "https://registry.yarnpkg.com/react-native-paper/-/react-native-paper-2.11.1.tgz#6f745b956c1a95ba24c02cbc0a935528f995a2eb"
-  integrity sha512-6/GNRzDWeiHYhEuw8DWCzAF8sTuhob3KrN2FJpxHntWzuaSM3g66SNc/YHjR8szgT8rxybn1v09xE023t8nJ5A==
+react-native-paper@^2.12.0:
+  version "2.12.0"
+  resolved "https://registry.yarnpkg.com/react-native-paper/-/react-native-paper-2.12.0.tgz#0688ff6530677bbc33442345f57b0278b12231bd"
+  integrity sha512-QEdtia+pWuOmEJlNwtGjc2+3iVSnpWGQHdJW3BN+lOp5sYnVetPHIR/EZHkpBNp3v/js1QrO8FLs3U2oWuyUuw==
   dependencies:
     "@callstack/react-theme-provider" "^1.0.7"
     color "^2.0.1"
@@ -6155,6 +6155,11 @@ react-native-screens@1.0.0-alpha.22, "react-native-screens@^1.0.0 || ^1.0.0-alph
   version "1.0.0-alpha.22"
   resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-1.0.0-alpha.22.tgz#7a120377b52aa9bbb94d0b8541a014026be9289b"
   integrity sha512-kSyAt0AeVU6N7ZonfV6dP6iZF8B7Bce+tk3eujXhzBGsLg0VSLnU7uE9VqJF0xdQrHR91ZjGgVMieo/8df9KTA==
+
+react-native-sectioned-multi-select@^0.6.5:
+  version "0.6.5"
+  resolved "https://registry.yarnpkg.com/react-native-sectioned-multi-select/-/react-native-sectioned-multi-select-0.6.5.tgz#2f32a1900fdde0d8f9dd172937fb6e0bc4ad58e1"
+  integrity sha512-I+QB1u1oJm0DVlon5ykoaXrEwteni3lwngovdLAZcRom9ZIYJQN4WQ6Z/HYzTL0oGHv7HZ5Gn6r2bekq8BHbQA==
 
 react-native-super-grid@^3.0.2:
   version "3.0.2"
