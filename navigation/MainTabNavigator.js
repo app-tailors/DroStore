@@ -1,5 +1,4 @@
 import React from "react";
-import { Platform } from "react-native";
 import { Icon } from "expo";
 import {
   createStackNavigator,
@@ -7,7 +6,6 @@ import {
   createDrawerNavigator
 } from "react-navigation";
 
-import TabBarIcon from "../components/TabBarIcon";
 import HomeScreen from "../screens/HomeScreen";
 import ArticlesScreen from "../screens/ArticlesScreen";
 import SettingsScreen from "../screens/SettingsScreen";
@@ -18,6 +16,7 @@ import CreditScreen from "../screens/CreditScreen";
 import AccountScreen from "../screens/AccountScreen";
 import NotificationsScreen from "../screens/NotificationScreen";
 import AddCategoryScreen from "../screens/AddCategory";
+import AddArticle from "../screens/AddArticle";
 
 const CalendarStack = createStackNavigator(
   {
@@ -91,9 +90,10 @@ tabApp.navigationOptions = {
 const stackApp = createStackNavigator(
   {
     tabApp,
+    AddArticle: AddArticle,
+    Notifications: NotificationsScreen,
     Account: AccountScreen,
-    AddCategory: AddCategoryScreen,
-    Notifications: NotificationsScreen
+    AddCategory: AddCategoryScreen
   },
   {
     headerMode: "screen"

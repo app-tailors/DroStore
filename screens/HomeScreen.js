@@ -9,11 +9,8 @@ import {
   Surface,
   Button
 } from "react-native-paper";
-import { AreaChart, XAxis } from "react-native-svg-charts";
-import * as shape from "d3-shape";
 
 import Colors from "../constants/Colors";
-import { Months } from "../i18n";
 import MainHeader from "../components/MainHeader";
 import SalesChart from "../components/HomeScreen/SalesChart";
 

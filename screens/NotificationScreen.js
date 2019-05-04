@@ -1,6 +1,7 @@
 import React from "react";
+import { List, Text } from "react-native-paper";
+import { FlatList } from "react-native";
 import MainHeader from "../components/MainHeader";
-import { Text } from "react-native-paper";
 
 export default class NotificationsScreen extends React.Component {
   static navigationOptions = {
@@ -10,8 +11,17 @@ export default class NotificationsScreen extends React.Component {
   };
 
   render() {
-    /* Go ahead and delete ExpoConfigView and replace it with your
-     * content, we just wanted to give you a quick view of your config */
-    return <Text>Working on</Text>;
+    return (
+      <FlatList
+        data={[{ key: "1", name: "a" }, { key: "3", name: "b" }]}
+        renderItem={({ item }) => (
+          <List.Item
+            title="First Item"
+            description="Item description"
+            left={props => <List.Icon {...props} icon="folder" />}
+          />
+        )}
+      />
+    );
   }
 }

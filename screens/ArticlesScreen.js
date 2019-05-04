@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { StyleSheet, View, KeyboardAvoidingView } from "react-native";
+import { StyleSheet, View, KeyboardAvoidingView, Picker } from "react-native";
 import { SwipeListView } from "react-native-swipe-list-view";
 import { Icon } from "expo";
 import {
@@ -30,6 +30,7 @@ class ArticlesScreen extends Component {
   };
 
   state = {
+    language: "java",
     open: false,
     firstQuery: "",
     openedCell: null,
@@ -63,10 +64,6 @@ class ArticlesScreen extends Component {
     this.setState({ openedCell: null });
   };
 
-  componentDidMount() {
-    // this.props.navigation.openDrawer();
-  }
-
   render() {
     const { screen, btnStyle } = styles;
     const { openedCell, open, listViewData, firstQuery, active } = this.state;
@@ -77,12 +74,24 @@ class ArticlesScreen extends Component {
       <View style={screen}>
         <KeyboardAvoidingView style={{ flex: 1 }}>
           <Searchbar
+            style={{ borderTopLeftRadius: 0, borderTopRightRadius: 0 }}
             placeholder="Search"
             onChangeText={query => {
               this.setState({ firstQuery: query });
             }}
             value={firstQuery}
           />
+          <Picker
+            itemStyle={{ height: 50 }}
+            selectedValue={this.state.language}
+            style={{ height: 50, width: "100%" }}
+            onValueChange={(itemValue, itemIndex) =>
+              this.setState({ language: itemValue })
+            }
+          >
+            <Picker.Item label="Java" value="java" />
+            <Picker.Item label="JavaScript" value="js" />
+          </Picker>
           <DataTable>
             <DataTable.Header>
               <DataTable.Title sortDirection="ascending">Name</DataTable.Title>
@@ -104,6 +113,8 @@ class ArticlesScreen extends Component {
                         shadowOffset: { width: 0, height: 10 },
                         shadowOpacity: 0.2,
                         shadowRadius: 10,
+                        elevation: 4,
+                        borderRadius: 10,
                         zIndex: 10
                       }
                     : {};
@@ -196,7 +207,7 @@ class ArticlesScreen extends Component {
               {
                 icon: "layers",
                 label: "Add Article",
-                onPress: () => console.log("Pressed Category")
+                onPress: () => navigate("AddArticle")
               }
             ]}
             onStateChange={data => this.setState({ open: data.open })}
